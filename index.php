@@ -1,15 +1,17 @@
 <?php
- include 'include/nav_modif.php';
+include 'include/nav_modif.php';
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Systeme de parrainage</title>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
+
 <body>
 	<!-- NAV -->
 	<?php include "include/nav.php"; ?>
@@ -21,7 +23,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h1 class="mt-5"> Bienvennue sur l'espase de parrainage</h1>
+				<h1 class="mt-5"> Bienvennue <?php echo $_SESSION['nom']?> sur l'espase de parrainage</h1>
 				<p class="lead">
 					Se site est un systeme de parrainage ( parrain filleul)
 				</p>
@@ -32,4 +34,5 @@
 		</div>
 	</div>
 </body>
+
 </html>

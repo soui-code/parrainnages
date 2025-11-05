@@ -17,12 +17,20 @@ $req=$sql->prepare("SELECT id FROM parrain WHERE email=:email");
 $req->bindParam(":email",$email);
 $req->execute();
 $user = $req->fetch(PDO::FETCH_ASSOC);
+// var_dump($user);
 if ($user) {
     echo "Cet email a déjà été utilisé...";
 
 } else{
-	// insertion dans la base de donnee
-
+	//Verification du code parrain
+	$req=$sql->prepare("SELECT id FROM parrain WHERE code_parrain =:code_parrain");
+	$req->bindParam('code_parrain',$code_parrain);
+	$req->execute();
+  $parrain = $req->fetch(PDO::FETCH_ASSOC);
+ 
+  if (($parrain) or ($parrain==null)){
+  	// insertion dans la base de donnee
+   
 	$req=$sql->prepare("INSERT INTO parrain (nom,email,password,code_parrain,cle) VALUES(:nom, :email, :password,:code_parrain, :cle) ");
 	$req->bindParam(":nom",$_POST['nom']);
 	$req->bindParam(":email",$_POST['email']);
@@ -38,6 +46,10 @@ if($result== true){
 }else{
 	echo "erreur lors de l'inscription";
 }
+  } else{
+  	echo "code parrain invalide";
+  }
+	
 
 }
 

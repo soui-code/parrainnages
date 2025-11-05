@@ -1,0 +1,6 @@
+	//Verifions si l'utilisateur a des prestations
+	     $req1 = $sql->prepare("SELECT count(id_parrain) FROM asso
+	     	JOIN parrain ON parrain.id = asso.id_parrain WHERE id_parrain =: id_parrain");
+	     $req1->bindParam("id_parrain",$user['id']);
+	     $req1->execute();
+	     echo $req1;

@@ -1,88 +1,44 @@
 <?php
 //Masque le input
 if (empty($_GET['code'])) {
-  ?>
+?>
   <style>
-    #code_parrain {display: none;}
+    #code_parrain {
+      display: none;
+    }
   </style>
 <?php
 } else {
-  ?>
-   <style>
-    #code_parrains {display: none;}
+?>
+  <style>
+    #code_parrains {
+      display: none;
+    }
   </style>
-  <?php
+<?php
 }
 if (empty($_GET['code'])) {
   $code = '';
-}else{
+} else {
   $code = $_GET['code'];
 }
 
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Système de parrainage</title>
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">	
-  <style>
-    body {
-    	
-      background-color: #f5f5f5;
-      /*min-height: 100vh;
-      display: flex;
-      align-items: center;*/
-      padding-top: 4px; 
-      padding-bottom: 40px;
-    }
-    .form-container {
-      margin-top: 120px;
-      max-width: 330px;
-      padding: 30px 20px;
-      margin: auto;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .form-container h1 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-    .form-container .lead {
-      color: #777;
-      margin-bottom: 25px;
-      font-size: 14px;
-    }
-    .form-container .form-control {
-      font-size: 16px;
-      padding: 10px;
-    }
-    .form-container .btn {
-      font-size: 16px;
-      padding: 10px;
-    }
-    .card-footer {
-      margin-top: 20px;
-      padding-top: 15px;
-      border-top: 1px solid #eee;
-      text-align: center;
-      font-size: 13px;
-    }
-    .card-footer a {
-      color: #337ab7;
-      text-decoration: none;
-    }
-    .card-footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Système de parrainage</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-<!-- NAV -->
-	<!-- /NAV -->
+  <!-- NAV -->
+  <!-- /NAV -->
   <div class="container">
     <div class="form-container">
       <h1 class="text-center">Créez votre compte</h1>
@@ -103,7 +59,7 @@ if (empty($_GET['code'])) {
         </div>
         <div class="form-group">
           <label for="code_parrain">code-parrain</label>
-          <input type="text" class="form-control" id="code_parrain" name="code_parrain" readonly value="<?php echo $code?>">
+          <input type="text" class="form-control" id="code_parrain" name="code_parrain" readonly value="<?php echo $code ?>">
           <input type="text" class="form-control" id="code_parrains" name="code_parrains">
         </div>
         <button type="submit" name="inscrire" class="btn btn-primary btn-block">S'inscrire</button>
@@ -116,6 +72,7 @@ if (empty($_GET['code'])) {
     </div>
   </div>
 
-	<?php include "include/link.php"; ?>
+  <?php include "include/link.php"; ?>
 </body>
+
 </html>

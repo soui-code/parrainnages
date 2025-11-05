@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,27 +16,32 @@
       padding-top: 40px;
       padding-bottom: 40px;
     }
+
     .form-signin {
       max-width: 330px;
       padding: 30px 20px;
       margin: auto;
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
+
     .form-signin .form-control {
       position: relative;
       height: auto;
       padding: 10px;
       font-size: 16px;
     }
+
     .form-signin .form-control:focus {
       z-index: 2;
     }
+
     .social-btn {
       margin-bottom: 10px;
       text-align: center;
     }
+
     .social-btn .btn {
       width: 100%;
       padding: 6px 12px;
@@ -43,6 +49,7 @@
       line-height: 1.42857143;
       border-radius: 4px;
     }
+
     .divider {
       margin: 20px 0;
       text-align: center;
@@ -50,6 +57,7 @@
       height: 1px;
       background: #e0e0e0;
     }
+
     .divider span {
       background: #f5f5f5;
       padding: 0 10px;
@@ -58,9 +66,11 @@
       position: relative;
       top: -8px;
     }
+
     .forgot-password {
       font-size: 13px;
     }
+
     .card-footer {
       margin-top: 20px;
       padding-top: 15px;
@@ -68,15 +78,18 @@
       text-align: center;
       font-size: 13px;
     }
+
     .card-footer a {
       color: #337ab7;
       text-decoration: none;
     }
+
     .card-footer a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
 
   <div class="container">
@@ -100,7 +113,7 @@
         <div class="col-xs-6 social-btn">
           <button type="button" class="btn btn-default">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" style="margin-right: 6px; vertical-align: -3px;">
-              <path fill="#1877f2" d="M256 128C256 57.3 198.7 0 128 0S0 57.3 0 128c0 63.9 46.8 116.7 108 126.4V160H76V128h32V104c0-31.3 18.7-48 48-48h32v32h-20c-5.5 0-8 2.5-8 8v24h32l-4 32h-28v94.4C209.2 244.7 256 191.9 256 128z"/>
+              <path fill="#1877f2" d="M256 128C256 57.3 198.7 0 128 0S0 57.3 0 128c0 63.9 46.8 116.7 108 126.4V160H76V128h32V104c0-31.3 18.7-48 48-48h32v32h-20c-5.5 0-8 2.5-8 8v24h32l-4 32h-28v94.4C209.2 244.7 256 191.9 256 128z" />
             </svg>
             Facebook
           </button>
@@ -115,8 +128,8 @@
       <!-- Formulaire -->
       <form action="action/action-conx.php" method="POST">
         <div class="form-group">
-          <label for="emai">E-mail</label>
-          <input type="email" class="form-control" id="email2" name="email" placeholder="Votre adresse e-mail" required>
+          <label for="email">E-mail</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Votre adresse e-mail" required>
         </div>
         <div class="form-group">
           <div class="clearfix">
@@ -137,4 +150,5 @@
   </div>
 
 </body>
+
 </html>

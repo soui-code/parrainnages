@@ -19,7 +19,7 @@
 					</li>
 					<li><a href="connexion.php" id="Se_connecter">Se connecter</a></li>
 					<li><a href="inscription.php" id="Sincrire">S'inscrire</a></li>
-					<li><a a href="action/action_deconnexion.php" id="Se_deconnecter" name="deco">Deconnecter</a></li>
+					<li><a a href="connexion.php" id="Se_deconnecter" name="deco">Deconnecter</a></li>
 					<li><a a href="liste.php" id="liste" name="deco">liste</a></li>
 				</ul>
 			</div>

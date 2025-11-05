@@ -1,37 +1,62 @@
 <?php
+include 'include/nav_modif.php';
 $sql = new PDO("mysql: host=localhost;dbname=parrainage", "root", "");
-session_start();
-$code =$_SESSION['cle'];
+// session_start();
+$code = $_SESSION['cle'];
 $req = $sql->prepare("SELECT * FROM parrain WHERE code_parrain =:code");
-$req->bindParam(":code",$code);
+$req->bindParam(":code", $code);
 $req->execute();
-$resulta=$req->fetchAll();
+$resulta = $req->fetchAll();
 
+//Ajout de l'entête
 
 ?>
 
+
+
+
+
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Liste de mes filleul</title>
+  <title>Système de parrainage</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-  <table border="2 solid black" cellspacing="2px">
-    <tr>
-      <th>Nom</th>
-      <th>E-mail</th>
-    </tr>
-    <?php
-      if (!empty($resulta)) { foreach ($resulta as $key => $value) {
-    ?>
-    <tr>
-      <th><?php echo $value['nom'] ;?></th>
-      <th><?php echo $value['email'] ;?></th>
-    </tr>
-  <?php } }?>
-  </table>
-  
+  <!-- NAV -->
+  <?php include "include/nav.php"; ?>
+  <!-- /NAV -->
+  <div class="container">
+    <div class="form-container">
+      <h1 class="text-center">Invite vos amis</h1>
+      <p class="lead text-center">Et gagner de l'argent</p>
+      <h1>Liste de mes feuilles</h1>
+      <table cellspacing="2px">
+        <tr class="form-group">
+          <th><label class="form-control">Nom</label></th>
+          <th><label class="form-control">E-mail</label></th>
+        </tr>
+        <?php
+        if (!empty($resulta)) {
+          foreach ($resulta as $key => $value) {
+        ?>
+            <tr class="form-group">
+              <th><label class="form-control"><?php echo $value['nom']; ?></label></th>
+              <th><label class="form-control"><?php echo $value['email']; ?></label></th>
+            </tr>
+        <?php }
+        } ?>
+      </table>
+    </div>
+  </div>
+
+  <?php include "include/link.php"; ?>
 </body>
+
 </html>
