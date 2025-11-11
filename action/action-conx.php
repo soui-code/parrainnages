@@ -17,6 +17,7 @@ if ($password === $user['password']) {
 	$_SESSION['parrain_id']=$user['id'];
 	$_SESSION['nom']=$user['nom'];
 	$_SESSION['cle']=$user['cle'];
+	$_SESSION['code_parrain']=$user['code_parrain'];
 	//redirection 
 	header("location: http://localhost/parrainages/index.php");
   }else {

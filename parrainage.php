@@ -1,9 +1,9 @@
 <?php
 $sql = new PDO("mysql: host=localhost;dbname=parrainage", "root", "");
 
-
 include 'include/nav_modif.php';
 include 'action/prestation.php';
+//verifie si la sessoin existe
 if (empty($_SESSION['cle'])) {
   $code = '';
 

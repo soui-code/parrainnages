@@ -47,7 +47,7 @@ $resulta = $req->fetchAll();
           foreach ($resulta as $key => $value) {
         ?>
             <tr class="form-group">
-              <th><label class="form-control"><?php echo $value['nom']; ?></label></th>
+              <th><label class="form-control "><?php echo $value['nom']; ?></label></th>
               <th><label class="form-control"><?php echo $value['email']; ?></label></th>
             </tr>
         <?php }
@@ -55,7 +55,7 @@ $resulta = $req->fetchAll();
       </table>
     </div>
   </div>
-
+  
   <?php include "include/link.php"; ?>
 </body>
 
