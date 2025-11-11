@@ -39,7 +39,7 @@ $resulta = $req->fetchAll();
       <h1>Liste de mes feuilles</h1>
       <table cellspacing="2px">
         <tr class="form-group">
-          <th><label class="form-control">Nom</label></th>
+          <th><label class="form-control">NOM</label></th>
           <th><label class="form-control">E-mail</label></th>
         </tr>
         <?php
