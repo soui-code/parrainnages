@@ -104,6 +104,9 @@ $resulta = $req->fetchAll(PDO::FETCH_ASSOC);
         </p>
       </div>
     </div>
+  <!-- footer -->
+  <?php include "include/footer.php"; ?>
+
   </div>
 
 

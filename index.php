@@ -10,6 +10,8 @@ include 'include/nav_modif.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Systeme de parrainage</title>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="icon" type="image/png" href="./icon/icon-192.png">
+	<link rel="manifest" href="manifest.json">
 </head>
 
 <body>
@@ -37,6 +39,17 @@ include 'include/nav_modif.php';
 			</div>
 		</div>
 	</div>
+
+	<!-- Ajout du footer avec "Tous droits réservés" -->
+<footer class="bg-light mt-5 py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="mb-0 text-muted">&copy; <?php echo date("Y"); ?> Tous droits réservés Rouah</p>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 
 </html>

@@ -89,9 +89,7 @@
     }
   </style>
 </head>
-
 <body>
-
   <div class="container">
     <div class="form-signin">
       <h1 class="text-center" style="font-size: 20px; font-weight: 600; margin-bottom: 5px;">Connectez-vous-a-votre compte</h1>
@@ -147,6 +145,9 @@
         <a href="http://localhost/parrainages/inscription.php#">Creez-un-compte</a>
       </div>
     </div>
+    <!-- footer -->
+  <?php include "include/footer.php"; ?>
+
   </div>
 
 </body>

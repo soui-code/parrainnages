@@ -38,6 +38,27 @@ if (empty($_GET['code'])) {
 
 <body>
   <!-- NAV -->
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarResponsive" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="parrainage.php">parrainage</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active">
+            <a href="http://localhost/parrainages/index.php">Accueil <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <!-- /NAV -->
   <div class="container">
     <div class="form-container">
@@ -70,9 +91,13 @@ if (empty($_GET['code'])) {
         <a href="http://localhost/parrainages/connexion.php#">Se connecter</a>
       </div>
     </div>
+    <!-- footer -->
+  <?php include "include/footer.php"; ?>
+
   </div>
 
   <?php include "include/link.php"; ?>
+
 </body>
 
 </html>

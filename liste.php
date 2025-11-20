@@ -54,6 +54,8 @@ $resulta = $req->fetchAll();
         } ?>
       </table>
     </div>
+  <?php include "include/footer.php"; ?>
+    
   </div>
   
   <?php include "include/link.php"; ?>
