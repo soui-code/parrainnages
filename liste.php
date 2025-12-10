@@ -2,9 +2,9 @@
 include 'include/nav_modif.php';
 $sql = new PDO("mysql: host=localhost;dbname=parrainage", "root", "");
 // session_start();
-$code = $_SESSION['cle'];
-$req = $sql->prepare("SELECT * FROM parrain WHERE code_parrain =:code");
-$req->bindParam(":code", $code);
+$id = $_SESSION['parrain_id'];
+$req = $sql->prepare("SELECT * FROM filleul WHERE id_parrain =:id_parrain");
+$req->bindParam(":id_parrain", $id);
 $req->execute();
 $resulta = $req->fetchAll();
 
@@ -40,15 +40,13 @@ $resulta = $req->fetchAll();
       <table cellspacing="2px">
         <tr class="form-group">
           <th><label class="form-control">NOM</label></th>
-          <th><label class="form-control">E-mail</label></th>
         </tr>
         <?php
         if (!empty($resulta)) {
           foreach ($resulta as $key => $value) {
         ?>
             <tr class="form-group">
-              <th><label class="form-control "><?php echo $value['nom']; ?></label></th>
-              <th><label class="form-control"><?php echo $value['email']; ?></label></th>
+              <th><label class="form-control "><?php echo $value['nom_filleul']; ?></label></th>
             </tr>
         <?php }
         } ?>

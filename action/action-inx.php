@@ -13,7 +13,7 @@ $code_parrain = $_POST['code_parrain'];
   //verification  et securite
 }
 //verifier si l'email existe deja
-$req=$sql->prepare("SELECT id FROM parrain WHERE email=:email");
+$req=$sql->prepare("SELECT id FROM utilisateur WHERE email=:email");
 $req->bindParam(":email",$email);
 $req->execute();
 $user = $req->fetch(PDO::FETCH_ASSOC);
@@ -22,24 +22,28 @@ if ($user) {
     echo "Cet email a déjà été utilisé...";
 
 } else{
-	//Verification du code parrain
-	$req=$sql->prepare("SELECT id FROM parrain WHERE code_parrain =:code_parrain");
+	//Verification du code utilisateur
+	$req=$sql->prepare("SELECT id FROM utilisateur WHERE cle =:code_parrain");
 	$req->bindParam('code_parrain',$code_parrain);
 	$req->execute();
   $parrain = $req->fetch(PDO::FETCH_ASSOC);
- 
+   // echo $parrain['id'];
   if (($parrain) or ($parrain==null)){
-  	// insertion dans la base de donnee
+  	// insertion d'un utilisateur dans la base de donnee
    
-	$req=$sql->prepare("INSERT INTO parrain (nom,email,password,code_parrain,cle) VALUES(:nom, :email, :password,:code_parrain, :cle) ");
+	$req=$sql->prepare("INSERT INTO utilisateur (nom,email,password,cle) VALUES(:nom, :email, :password, :cle)");
 	$req->bindParam(":nom",$_POST['nom']);
 	$req->bindParam(":email",$_POST['email']);
 	$req->bindParam(":cle",$cle);
 	$req->bindParam(":password",$password);	
-	$req->bindParam(":code_parrain",$code_parrain);
 	$result=$req->execute();	
 if($result== true){
-	
+	//insertion du filleul
+	$id_parrain = $parrain['id'];
+	$req1 = $sql->prepare("INSERT INTO filleul(id_parrain,nom_filleul) VALUES(:id_parrain,:nom_filleul)");
+  $req1->bindParam(':id_parrain',$id_parrain);
+  $req1->bindParam(':nom_filleul',$_POST['nom']);
+  $result=$req1->execute();	
 	echo "compte creé avec succes! <a href='http://localhost/parrainages/connexion.php'> se connecter </a>";
 	// header("location: connexion.php");
   

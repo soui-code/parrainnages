@@ -22,7 +22,7 @@ session_start();
 <?php
 }
 //Selection du parrain de l'utilisateur
-$req = $sql->prepare("SELECT * FROM parrain WHERE cle =:code_parrain");
+$req = $sql->prepare("SELECT * FROM utilisateur WHERE cle =:code_parrain");
 $req->bindParam("code_parrain",$_SESSION['code_parrain']);
 $req->execute();
 $result = $req->fetchAll();

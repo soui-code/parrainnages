@@ -4,7 +4,7 @@ session_start();
 $email=$_POST['email'];
 $password=$_POST['password'];
 //recherche de l'user
-$req=$sql->prepare("SELECT * FROM  parrain WHERE email=:email");
+$req=$sql->prepare("SELECT * FROM  utilisateur WHERE email=:email");
 $req->bindParam(":email",$email);
 $req->execute();
 $user = $req->fetch();

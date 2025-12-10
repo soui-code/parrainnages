@@ -22,8 +22,8 @@ if (empty($_SESSION['cle'])) {
 $id = $_SESSION['parrain_id'];
 $req = $sql->prepare('SELECT prestation.reduction FROM prestation
     JOIN asso ON asso.id_prestation = prestation.id
-    JOIN parrain ON parrain.id = asso.id_parrain Where parrain.id =:id_parrain');
-$req->bindParam('id_parrain', $_SESSION['parrain_id']);
+    JOIN utilisateur ON utilisateur.id = asso.id_utilisateur Where utilisateur.id =:id_utilisateur');
+$req->bindParam('id_utilisateur', $_SESSION['parrain_id']);
 $req->execute();
 $resulta = $req->fetchAll(PDO::FETCH_ASSOC);
 
